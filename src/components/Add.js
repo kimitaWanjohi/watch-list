@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ResultCard } from "./ResultCard";
 
 const Add = () => {
-  const TMDB_KEY = "afcc4e756d500720208345094fe13a77";
+  const TMDB_KEY = "89cf2b7279fdc43e08e90c2795c7bfcb";
 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -15,7 +15,7 @@ const Add = () => {
     setQuery(keyword);
 
     fetch(
-      `https://api.themoviedb.org/3/movie/550?api_key=89cf2b7279fdc43e08e90c2795c7bfcb&language=en-US&query=${keyword}&page=1&include_adult=false`
+      `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&language=en-US&query=${keyword}&page=1&include_adult=false`
     )
       .then((res) => res.json())
       .then((data) => {
